@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+
+  </head>
+
+
+  <div class = "container bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-active">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <ul>
+            <%= link_to "Home", root_path,class:"nav-item nav-link active"  %>
+          </ul>
+          <ul>
+            <%= link_to "Books", books_path,class:"nav-item nav-link active"  %>
+          </ul>
+          <ul>
+            <%= link_to "Authors", authors_path,class:"nav-item nav-link active"  %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="content">
+  <%= yield %>
+</div>
+
+</html>

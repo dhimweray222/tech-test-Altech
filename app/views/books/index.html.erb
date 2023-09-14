@@ -1,0 +1,37 @@
+<!-- app/views/books/index.html.erb -->
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Description</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.author&.name %></td>
+          <td><%= book.description %></td>
+          <td class= "text-uppercase"><%= link_to 'Show', book , class: 'btn btn-secondary btn-sm'%> | <%= link_to 'Edit', edit_book_path(book), class: 'btn btn-secondary btn-sm' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @books %>
+
+
+    <% if current_user%>
+      <p><%current_user.email%></p>
+      <%= link_to 'New Book', new_book_path ,class: 'btn btn-primary'%>
+    <% else %>
+      <p>You are not signed in</p>
+      <%= link_to "Sign up", new_user_registration_path,class: 'btn btn-primary' %>
+      <%= link_to "Login", new_user_session_path ,class: 'btn btn-primary'%>
+    <% end %>
+
+</div>
+
+

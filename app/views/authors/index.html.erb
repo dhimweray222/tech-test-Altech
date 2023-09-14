@@ -1,0 +1,42 @@
+<!-- app/views/authors/index.html.erb -->
+
+
+
+
+<!-- app/views/books/index.html.erb -->
+<div class="container">
+  <h1 class="d-flex justify-content-center" >Authors</h1>
+  <table class="table ">
+    <thead class="thead-danger">
+      <tr>
+        <th class="text-center" scope="col">No</th>
+        <th class="text-center" scope="col">Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @authors.each_with_index do |author, index| %>
+        <tr>
+          <td class="text-center" ><%= index+1 %></td>
+          <td class="text-center"><%= author.name %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+
+    <% if current_user%>
+      <p><%current_user.email%></p>
+      <%= link_to 'New Author', new_author_path, class: 'btn btn-primary' %>
+    <% else %>
+      <p>You are not signed in</p>
+      <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-secondary'  %>
+      <%= link_to "Login", new_user_session_path,class: 'btn btn-secondary'  %>
+    <% end %>
+
+</div>
+
+
+
+
+
