@@ -1,24 +1,20 @@
-# README
+# Tech Test Altech
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+- Ruby (version 3.1.2p20)
+- Rails (version 7.0.4)
+### Installation
 
-* Ruby version
+Follow these steps to set up the project locally:
 
-* System dependencies
+1. Clone the repository:
 
-* Configuration
+   ```shell
+   git clone https://github.com/dhimweray222/tech-test-Altech.git
+2. bundle install
+3. rails db:create
+4. rails db:migrate
+5. rails server
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Run Unit Test
+1. rspec
